@@ -26,8 +26,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
 
       // Initial states
       gsap.set([labelRef.current, headlineRef.current, subheadlineRef.current, ctaRef.current, metricsRef.current], {
-        opacity: 1,
-        y: 0,
+        opacity: 0,
+        y: 30,
       });
       gsap.set(imageRef.current, { opacity: 0, scale: 1.1 });
 
