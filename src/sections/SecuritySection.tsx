@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, FileText } from 'lucide-react';
@@ -126,15 +126,16 @@ const SecuritySection = ({ className = '' }: SecuritySectionProps) => {
           Your data is subject to the laws you choose. Our facilities operate under local jurisdiction with strict access controls, encryption, and audit logging.
         </p>
 
-        <button
-          ref={linkRef}
+        <a
+          ref={linkRef as React.Ref<HTMLAnchorElement>}
+          href="/acceso"
           className="flex items-center gap-2 font-mono text-sm text-ignum-copper hover:text-ignum-copper-light transition-colors group"
           style={{ willChange: 'transform, opacity' }}
         >
           <FileText size={16} />
-          Read the security whitepaper
+          Request Access
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-        </button>
+        </a>
       </div>
     </section>
   );
