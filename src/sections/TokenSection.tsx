@@ -84,17 +84,33 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
         {/* Heading */}
         <div ref={headingRef} className="mb-12">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-ignum-copper mb-4">
-            Real-World Asset Protocol
+            Real-World Asset · Base L2
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ignum-offwhite leading-[0.95] tracking-tight mb-6">
             <span className="text-gradient-copper">$IGNUM</span> Token.<br />
-            Energía soberana<br />
-            en cadena.
+            Energía soberana.<br />
+            On-chain.
           </h2>
           <p className="font-body text-base md:text-lg text-ignum-gray leading-relaxed max-w-xl">
-            Infraestructura de cómputo de alto rendimiento respaldada por activos reales.
-            El primer token RWA que tokeniza energía y capacidad GPU en Latinoamérica.
+            El primer RWA que tokeniza capacidad energética y cómputo soberano en Latinoamérica.
+            Cada token representa infraestructura real — energía, GPU, territorio — no promesas.
           </p>
+        </div>
+
+        {/* Stats bar */}
+        <div className="grid grid-cols-3 gap-px bg-ignum-offwhite/10 mb-10 border border-ignum-offwhite/10">
+          <div className="bg-ignum-black px-6 py-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Capacidad Actual</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">7.3 MW</p>
+          </div>
+          <div className="bg-ignum-black px-6 py-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Costo Energético</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">$0.052/kWh</p>
+          </div>
+          <div className="bg-ignum-black px-6 py-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Objetivo</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">100 MW</p>
+          </div>
         </div>
 
         {/* Cards */}
@@ -103,20 +119,22 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
           <div className="p-6 border border-ignum-offwhite/10 bg-ignum-charcoal/40 hover:border-ignum-copper/40 transition-colors">
             <Zap size={20} className="text-ignum-copper mb-4" />
             <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-2">
-              Respaldo Físico
+              EnergyCore — Activo Generacional
             </p>
             <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
-              Cada token representa capacidad de cómputo real — H200 SXM5, RTX Blackwell — instalada en Cuadritos, Celaya.
+              Generación propia con contratos de gas a 10–15 años. Concesiones de agua aseguradas.
+              Energía que existe independientemente de los ciclos tecnológicos.
             </p>
           </div>
 
           <div className="p-6 border border-ignum-offwhite/10 bg-ignum-charcoal/40 hover:border-ignum-copper/40 transition-colors">
             <Lock size={20} className="text-ignum-copper mb-4" />
             <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-2">
-              On-Chain Transparency
+              Transparencia On-Chain
             </p>
             <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
-              Auditoría pública en Base L2. Cada transacción, cada watt, cada GPU — verificable sin intermediarios.
+              Auditoría pública en Base L2. Cada MW, cada GPU, cada contrato —
+              verificable en tiempo real sin intermediarios ni confianza ciega.
             </p>
           </div>
 
@@ -126,7 +144,8 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
               Acceso Institucional
             </p>
             <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
-              Disponible para inversores calificados, family offices y fondos que buscan exposición a infraestructura AI soberana.
+              Disponible para inversores calificados, family offices y fondos con
+              visión de 10 años. Objetivo: EBITDA $45–55M, valuación $500M+.
             </p>
           </div>
 
@@ -144,7 +163,7 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
           <div className="flex items-center gap-3 p-4 bg-ignum-black/50 border border-ignum-offwhite/10">
             <div className="w-2 h-2 rounded-full bg-ignum-success animate-pulse" />
             <span className="font-mono text-xs uppercase tracking-wider text-ignum-gray">
-              8 Fundadores · Cap $2M · Acceso por invitación
+              8 Fundadores · Acceso por invitación · Cuadritos, Celaya
             </span>
           </div>
         </div>
