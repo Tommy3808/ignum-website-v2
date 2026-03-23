@@ -154,18 +154,18 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
                 <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  4
+                  H200
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  H200 SXM5
+                  SXM5 · 141GB HBM3e
                 </div>
               </div>
               <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
                 <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  7.3
+                  15 MW
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  MW Online
+                  Fase I · En despliegue
                 </div>
               </div>
             </div>
