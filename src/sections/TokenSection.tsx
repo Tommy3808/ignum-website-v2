@@ -1,0 +1,157 @@
+import { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Zap, Lock, TrendingUp, ArrowRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface TokenSectionProps {
+  className?: string;
+}
+
+const TokenSection = ({ className = '' }: TokenSectionProps) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: '+=120%',
+          pin: true,
+          scrub: 0.6,
+          anticipatePin: 1,
+        },
+      });
+
+      scrollTl.fromTo(
+        headingRef.current,
+        { y: '6vh', opacity: 0 },
+        { y: 0, opacity: 1, ease: 'power2.out' },
+        0
+      );
+
+      scrollTl.fromTo(
+        cardsRef.current?.children || [],
+        { y: '8vh', opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.08, ease: 'power2.out' },
+        0.1
+      );
+
+      scrollTl.fromTo(
+        ctaRef.current,
+        { y: '4vh', opacity: 0 },
+        { y: 0, opacity: 1, ease: 'power2.out' },
+        0.3
+      );
+
+      scrollTl.fromTo(
+        headingRef.current,
+        { y: 0, opacity: 1 },
+        { y: '-8vh', opacity: 0, ease: 'power2.in' },
+        0.75
+      );
+
+      scrollTl.fromTo(
+        cardsRef.current,
+        { y: 0, opacity: 1 },
+        { y: '-6vh', opacity: 0, ease: 'power2.in' },
+        0.78
+      );
+
+      scrollTl.fromTo(
+        ctaRef.current,
+        { y: 0, opacity: 1 },
+        { y: '-6vh', opacity: 0, ease: 'power2.in' },
+        0.80
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className={`section-pinned bg-ignum-black ${className}`}
+    >
+      <div className="section-inner flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 max-w-7xl mx-auto w-full">
+
+        {/* Heading */}
+        <div ref={headingRef} className="mb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-ignum-copper mb-4">
+            Real-World Asset Protocol
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ignum-offwhite leading-[0.95] tracking-tight mb-6">
+            <span className="text-gradient-copper">$IGNUM</span> Token.<br />
+            Energía soberana<br />
+            en cadena.
+          </h2>
+          <p className="font-body text-base md:text-lg text-ignum-gray leading-relaxed max-w-xl">
+            Infraestructura de cómputo de alto rendimiento respaldada por activos reales.
+            El primer token RWA que tokeniza energía y capacidad GPU en Latinoamérica.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+
+          <div className="p-6 border border-ignum-offwhite/10 bg-ignum-charcoal/40 hover:border-ignum-copper/40 transition-colors">
+            <Zap size={20} className="text-ignum-copper mb-4" />
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-2">
+              Respaldo Físico
+            </p>
+            <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
+              Cada token representa capacidad de cómputo real — H200 SXM5, RTX Blackwell — instalada en Cuadritos, Celaya.
+            </p>
+          </div>
+
+          <div className="p-6 border border-ignum-offwhite/10 bg-ignum-charcoal/40 hover:border-ignum-copper/40 transition-colors">
+            <Lock size={20} className="text-ignum-copper mb-4" />
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-2">
+              On-Chain Transparency
+            </p>
+            <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
+              Auditoría pública en Base L2. Cada transacción, cada watt, cada GPU — verificable sin intermediarios.
+            </p>
+          </div>
+
+          <div className="p-6 border border-ignum-offwhite/10 bg-ignum-charcoal/40 hover:border-ignum-copper/40 transition-colors">
+            <TrendingUp size={20} className="text-ignum-copper mb-4" />
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-2">
+              Acceso Institucional
+            </p>
+            <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
+              Disponible para inversores calificados, family offices y fondos que buscan exposición a infraestructura AI soberana.
+            </p>
+          </div>
+
+        </div>
+
+        {/* CTA */}
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start">
+          <a
+            href="/investors"
+            className="btn-copper flex items-center gap-2 group"
+          >
+            <span>Ver Oportunidad de Inversión</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <div className="flex items-center gap-3 p-4 bg-ignum-black/50 border border-ignum-offwhite/10">
+            <div className="w-2 h-2 rounded-full bg-ignum-success animate-pulse" />
+            <span className="font-mono text-xs uppercase tracking-wider text-ignum-gray">
+              8 Fundadores · Cap $2M · Acceso por invitación
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default TokenSection;

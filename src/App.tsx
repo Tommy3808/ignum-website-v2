@@ -10,6 +10,7 @@ import DeploySection from './sections/DeploySection';
 import ComplianceSection from './sections/ComplianceSection';
 import PerformanceSection from './sections/PerformanceSection';
 import EcosystemSection from './sections/EcosystemSection';
+import TokenSection from './sections/TokenSection';
 import ContactSection from './sections/ContactSection';
 import NoiseOverlay from './components/NoiseOverlay';
 
@@ -79,6 +80,7 @@ function App() {
         <ComplianceSection className="z-[60]" />
         <PerformanceSection className="z-[70]" />
         <EcosystemSection className="z-[80]" />
+        <TokenSection className="z-[85]" />
         <ContactSection className="z-[90]" />
       </main>
     </div>
