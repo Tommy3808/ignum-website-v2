@@ -98,17 +98,21 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
         </div>
 
         {/* Stats bar */}
-        <div className="grid grid-cols-3 gap-px bg-ignum-offwhite/10 mb-10 border border-ignum-offwhite/10">
+        <div className="grid grid-cols-4 gap-px bg-ignum-offwhite/10 mb-10 border border-ignum-offwhite/10">
           <div className="bg-ignum-black px-6 py-4">
-            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Capacidad Actual</p>
-            <p className="font-display text-2xl font-bold text-ignum-copper">7.3 MW</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Fase I — 2026</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">15 MW</p>
           </div>
           <div className="bg-ignum-black px-6 py-4">
-            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Costo Energético</p>
-            <p className="font-display text-2xl font-bold text-ignum-copper">$0.052/kWh</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Fase II — 2027</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">30 MW</p>
           </div>
           <div className="bg-ignum-black px-6 py-4">
-            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Objetivo</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Fase III — 2028</p>
+            <p className="font-display text-2xl font-bold text-ignum-copper">50 MW</p>
+          </div>
+          <div className="bg-ignum-black px-6 py-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Visión 10 años</p>
             <p className="font-display text-2xl font-bold text-ignum-copper">100 MW</p>
           </div>
         </div>
@@ -123,7 +127,8 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
             </p>
             <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
               Generación propia con contratos de gas a 10–15 años. Concesiones de agua aseguradas.
-              Energía que existe independientemente de los ciclos tecnológicos.
+              Energía soberana que existe independientemente de cualquier ciclo tecnológico.
+              El activo que no desaparece.
             </p>
           </div>
 
