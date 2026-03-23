@@ -64,6 +64,14 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-ignum-copper transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
+            <a
+              href="/tommyai"
+              className="font-mono text-xs uppercase tracking-widest text-ignum-copper hover:text-ignum-copper-light transition-colors relative group flex items-center gap-1"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-ignum-copper animate-pulse" />
+              TommyAI
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-ignum-copper transition-all duration-300 group-hover:w-full" />
+            </a>
             <button
               onClick={() => scrollToSection('contact')}
               className="btn-copper-outline text-xs py-2 px-4"
