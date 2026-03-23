@@ -112,7 +112,7 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
             <p className="font-display text-2xl font-bold text-ignum-copper">50 MW</p>
           </div>
           <div className="bg-ignum-black px-6 py-4">
-            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">2030 Target</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-ignum-gray mb-1">Visión 10 años</p>
             <p className="font-display text-2xl font-bold text-ignum-copper">100 MW</p>
           </div>
         </div>
@@ -150,7 +150,7 @@ const TokenSection = ({ className = '' }: TokenSectionProps) => {
             </p>
             <p className="font-body text-ignum-offwhite text-sm leading-relaxed">
               Disponible para inversores calificados, family offices y fondos con
-              horizonte de expansión. Objetivo: EBITDA $45–55M, valuación $500M+.
+              visión de 10 años. Objetivo: EBITDA $45–55M, valuación $500M+.
             </p>
           </div>
 
