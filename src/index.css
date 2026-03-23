@@ -208,3 +208,14 @@
   background: rgba(184, 115, 51, 0.3);
   color: #F5F5F0;
 }
+
+/* GSAP fallback - prevent invisible sections */
+.section-pinned > div,
+.section-pinned > [ref] {
+  opacity: 1 !important;
+}
+
+/* Ensure all sections are visible by default */
+section > div {
+  will-change: transform;
+}
