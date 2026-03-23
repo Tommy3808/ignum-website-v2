@@ -87,8 +87,8 @@ const ComplianceSection = ({ className = '' }: ComplianceSectionProps) => {
   }, []);
 
   const badges = [
-    { label: 'Jurisdicción MX soberana', icon: ShieldCheck },
-    { label: 'Auditoría on-chain (Base L2)', icon: ClipboardCheck },
+    { label: 'SOC 2 Type II', icon: ShieldCheck },
+    { label: 'ISO 27001', icon: ClipboardCheck },
     { label: 'End-to-end encrypted', icon: Lock },
   ];
 
