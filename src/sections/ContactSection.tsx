@@ -119,7 +119,7 @@ const ContactSection = ({ className = '' }: ContactSectionProps) => {
               </div>
               <div className="flex items-center gap-3 text-ignum-gray">
                 <Mail size={16} className="text-ignum-copper" />
-                <span className="font-mono text-sm">tommy@ignumprotocol.com</span>
+                <span className="font-mono text-sm">field@ignum.io</span>
               </div>
             </div>
 

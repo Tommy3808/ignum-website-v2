@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Download, ShieldCheck, ClipboardCheck, Lock } from 'lucide-react';
@@ -144,15 +144,14 @@ const ComplianceSection = ({ className = '' }: ComplianceSectionProps) => {
           ))}
         </div>
 
-        <a
-          ref={ctaRef as React.Ref<HTMLAnchorElement>}
-          href="/acceso"
+        <button
+          ref={ctaRef}
           className="btn-copper-outline flex items-center gap-2 group"
           style={{ willChange: 'transform, opacity' }}
         >
           <Download size={16} />
-          Request Security Brief
-        </a>
+          Download compliance summary
+        </button>
       </div>
     </section>
   );

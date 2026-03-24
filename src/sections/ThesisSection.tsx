@@ -157,7 +157,7 @@ const ThesisSection = ({ className = '' }: ThesisSectionProps) => {
           className="font-body text-base md:text-lg text-ignum-gray leading-relaxed mb-10 max-w-md"
           style={{ willChange: 'transform, opacity' }}
         >
-          The moat is energy + silicon + jurisdiction. 7.3 MW on-site. H200 SXM5 141GB. MX law — no CLOUD Act, no Patriot Act. A vertically integrated stack where your inference never leaves your jurisdiction.
+          The moat is control over energy, silicon, and jurisdiction. We built IGNUM as a vertically integrated stack—so your inference stays yours.
         </p>
 
         {/* Chips */}

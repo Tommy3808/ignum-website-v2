@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
 import ThesisSection from './sections/ThesisSection';
+import TheFieldSection from './sections/TheFieldSection';
 import InfrastructureSection from './sections/InfrastructureSection';
 import SecuritySection from './sections/SecuritySection';
 import DeploySection from './sections/DeploySection';
@@ -74,6 +75,7 @@ function App() {
       <main className="relative">
         <HeroSection className="z-10" />
         <ThesisSection className="z-20" />
+        <TheFieldSection className="z-25" />
         <InfrastructureSection className="z-30" />
         <SecuritySection className="z-40" />
         <DeploySection className="z-50" />

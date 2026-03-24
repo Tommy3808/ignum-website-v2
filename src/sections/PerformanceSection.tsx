@@ -80,9 +80,8 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
   }, []);
 
   const metrics = [
-    { value: '< 12', unit: 'ms', label: 'Latencia QRO · medida' },
-    { value: '$0.04', unit: '/kWh', label: 'Costo energético interno' },
-    { value: '~70%', unit: 'menos', label: 'vs AWS/GCP/Azure' },
+    { value: '< 120', unit: 'ms', label: 'p99 inference latency' },
+    { value: '99.99', unit: '%', label: 'monthly uptime target' },
   ];
 
   const microItems = [
@@ -155,18 +154,18 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
                 <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  H200
+                  4
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  SXM5 · 141GB HBM3e
+                  H200 SXM5
                 </div>
               </div>
               <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
                 <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  15 MW
+                  7.3
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  Fase I · En despliegue
+                  MW Online
                 </div>
               </div>
             </div>
