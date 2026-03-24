@@ -80,8 +80,9 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
   }, []);
 
   const metrics = [
-    { value: '< 120', unit: 'ms', label: 'p99 inference latency' },
-    { value: '99.99', unit: '%', label: 'monthly uptime target' },
+    { value: '< 12', unit: 'ms', label: 'Latencia QRO · medida' },
+    { value: '$0.04', unit: '/kWh', label: 'Costo energético interno' },
+    { value: '~70%', unit: 'menos', label: 'vs AWS/GCP/Azure' },
   ];
 
   const microItems = [

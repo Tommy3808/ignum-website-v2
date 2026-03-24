@@ -14,7 +14,7 @@ const pillars = [
     icon: Zap,
     label: 'Energía On-Site',
     value: '7.3 MW',
-    sub: 'Cogeneración operativa hoy · Jenbacher',
+    sub: 'Cogeneración operativa hoy · $0.038–0.045/kWh',
   },
   {
     icon: Database,
@@ -26,7 +26,7 @@ const pillars = [
     icon: Globe,
     label: 'Footprint',
     value: '15,000 m²',
-    sub: 'Phase 1 · 45 ha expansión disponible',
+    sub: 'Phase 1 · 45 ha campus · Autorizado 100 MW',
   },
   {
     icon: Zap,

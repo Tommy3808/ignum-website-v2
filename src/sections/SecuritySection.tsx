@@ -123,7 +123,7 @@ const SecuritySection = ({ className = '' }: SecuritySectionProps) => {
           className="font-body text-base md:text-lg text-ignum-gray leading-relaxed mb-10 max-w-md"
           style={{ willChange: 'transform, opacity' }}
         >
-          Your data is subject to the laws you choose. Our facilities operate under local jurisdiction with strict access controls, encryption, and audit logging.
+          Jurisdicción MX exclusiva. MLAT-only — sin CLOUD Act, sin Patriot Act, sin acceso extraterritorial. Datos bajo Ley Federal de Protección de Datos Personales. Lo que entra en México, se queda en México.
         </p>
 
         <a
