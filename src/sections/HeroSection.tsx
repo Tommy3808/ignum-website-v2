@@ -101,10 +101,10 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
   }, []);
 
   const metrics = [
-    { label: 'Power Online', value: '7.3', unit: 'MW', icon: Zap },
-    { label: 'GPUs Active', value: '4', unit: 'H200 SXM5', icon: Cpu },
-    { label: 'Latency', value: '<20', unit: 'ms', icon: Timer },
-    { label: 'Uptime', value: '99.97', unit: '%', icon: Activity },
+    { label: 'On-Site Generation', value: '7.3', unit: 'MW', icon: Zap },
+    { label: 'IT Phase 1', value: '2', unit: 'MW IT', icon: Cpu },
+    { label: 'H200 SXM5 141GB', value: 'DEPLOYING', unit: '', icon: Timer },
+    { label: 'Latency → QRO', value: '5–12', unit: 'ms', icon: Activity },
   ];
 
   const scrollToContact = () => {

@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
+import FactsBar from './components/FactsBar';
 import ThesisSection from './sections/ThesisSection';
 import TheFieldSection from './sections/TheFieldSection';
 import InfrastructureSection from './sections/InfrastructureSection';
@@ -74,6 +75,7 @@ function App() {
       
       <main className="relative">
         <HeroSection className="z-10" />
+        <FactsBar />
         <ThesisSection className="z-20" />
         <TheFieldSection className="z-25" />
         <InfrastructureSection className="z-30" />
