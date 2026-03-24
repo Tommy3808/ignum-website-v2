@@ -144,29 +144,43 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
         <div className="card-dark w-full h-full p-8 flex flex-col justify-between">
           <div>
             <h3 className="font-display text-2xl font-bold text-ignum-offwhite mb-3">
-              Request access
+              Pricing · Base Case 2026
             </h3>
-            <p className="font-body text-sm text-ignum-gray leading-relaxed mb-8">
-              Join the early program. Priority for teams with latency-sensitive workloads.
+            <p className="font-body text-sm text-ignum-gray leading-relaxed mb-6">
+              Energía + CaaS + SLA incluidos. Anchor 400–600 kW negociado + depósito 2 meses.
             </p>
 
-            {/* Metrics inside card */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
-                <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  4
+            {/* Pricing tiers */}
+            <div className="space-y-3 mb-6">
+              <div className="p-3 bg-ignum-black/50 border border-ignum-offwhite/10">
+                <div className="flex justify-between items-baseline mb-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray">Industrial Tier III</span>
+                  <span className="font-display text-xl font-bold text-ignum-copper">$145–160</span>
                 </div>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  H200 SXM5
-                </div>
+                <span className="font-mono text-[9px] text-ignum-gray/50">/kW-mes · Energía + CaaS + SLA</span>
               </div>
-              <div className="p-4 bg-ignum-black/50 border border-ignum-offwhite/5">
-                <div className="font-display text-2xl font-bold text-ignum-copper mb-1">
-                  7.3
+              <div className="p-3 bg-ignum-black/50 border border-ignum-copper/20">
+                <div className="flex justify-between items-baseline mb-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray">HPC Premium liquid-ready</span>
+                  <span className="font-display text-xl font-bold text-ignum-copper">$165–195</span>
                 </div>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray/70">
-                  MW Online
-                </div>
+                <span className="font-mono text-[9px] text-ignum-gray/50">/kW-mes · Liquid loop + NVIDIA-ready + low latency</span>
+              </div>
+            </div>
+
+            {/* Latencias */}
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-center p-2 border border-ignum-offwhite/5">
+                <div className="font-display text-base font-bold text-ignum-copper">5–12ms</div>
+                <div className="font-mono text-[9px] text-ignum-gray/60">→ QRO</div>
+              </div>
+              <div className="text-center p-2 border border-ignum-offwhite/5">
+                <div className="font-display text-base font-bold text-ignum-copper">18–28ms</div>
+                <div className="font-mono text-[9px] text-ignum-gray/60">→ CDMX</div>
+              </div>
+              <div className="text-center p-2 border border-ignum-offwhite/5">
+                <div className="font-display text-base font-bold text-ignum-copper">42–55ms</div>
+                <div className="font-mono text-[9px] text-ignum-gray/60">→ Dallas</div>
               </div>
             </div>
           </div>
