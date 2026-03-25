@@ -159,11 +159,11 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
       id: 'silicon',
       title: 'Silicon',
       icon: Cpu,
-      headline: '2× H200 SXM5 141 GB',
+      headline: '4× H200 SXM5 141 GB',
       subheadline: 'Live · 141 GB HBM3e cada uno · 4.8 TB/s',
       details: [
-        { label: 'GPU 1', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
-        { label: 'GPU 2', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
+        { label: 'GPU 1–2', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
+        { label: 'GPU 3–4', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
         { label: 'Memory Bandwidth', value: '4.8 TB/s por GPU' },
         { label: 'Total VRAM', value: '282 GB HBM3e' },
         { label: 'Status', value: 'Live — Abierta sin usar' },
@@ -236,7 +236,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
     { label: 'Ubicación', value: 'Celaya, GTO' },
     { label: 'Campus', value: '15,000 m²' },
     { label: 'Potencia', value: '7.3 MW' },
-    { label: 'GPUs', value: '2× H200' },
+    { label: 'GPUs', value: '4× H200' },
     { label: 'Capacidad IT', value: '2 MW' },
     { label: 'Pipeline', value: '25 km' },
     { label: 'Subestación', value: '20 MVA' },
@@ -261,7 +261,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
             The Field.
           </h2>
           <p className="font-body text-lg md:text-xl text-ignum-gray max-w-2xl leading-relaxed">
-            Infraestructura física verificable. 2× Jenbacher J620. 2× H200 SXM5 141 GB. 
+            Infraestructura física verificable. 2× Jenbacher J620. 4× H200 SXM5 141 GB. 
             7.3 MW operativos. No promesas. Solo silicio, energía y jurisdicción.
           </p>
         </div>
@@ -399,7 +399,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 <span className="font-mono text-sm text-ignum-gray">%</span>
               </div>
               <span className="font-mono text-[10px] text-ignum-gray/60 block mt-1">
-                2× H200 SXM5
+                4× H200 SXM5
               </span>
             </div>
 
