@@ -16,6 +16,7 @@ import {
   FileText,
   ChevronDown,
   ChevronUp,
+  Flame,
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,10 +28,11 @@ interface TheFieldSectionProps {
 const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
+  const proofStripRef = useRef<HTMLDivElement>(null);
   const pillarsRef = useRef<HTMLDivElement>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
-  const [expandedPillar, setExpandedPillar] = useState<string | null>('silicon');
+  const [expandedPillar, setExpandedPillar] = useState<string | null>('energy');
   const [liveMetrics, setLiveMetrics] = useState({
     power: 7.3,
     utilization: 94.2,
@@ -63,6 +65,22 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
           scrollTrigger: {
             trigger: headlineRef.current,
             start: 'top 75%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+
+      gsap.fromTo(
+        proofStripRef.current?.children || [],
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.05,
+          duration: 0.4,
+          scrollTrigger: {
+            trigger: proofStripRef.current,
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           },
         }
@@ -120,73 +138,89 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
 
   const pillars = [
     {
-      id: 'silicon',
-      title: 'Silicon',
-      icon: Cpu,
-      headline: '4× H200 SXM5 141 GB HBM3e',
-      subheadline: 'Live + cantidad total disponible',
+      id: 'energy',
+      title: 'Energy',
+      icon: Flame,
+      headline: '7.3 MW Cogeneración',
+      subheadline: '2× Jenbacher J620 · 3.65 MW cada uno',
       details: [
-        { label: 'GPU Model', value: 'NVIDIA H200 SXM5' },
-        { label: 'Memory', value: '141 GB HBM3e per GPU' },
-        { label: 'Bandwidth', value: '4.8 TB/s' },
-        { label: 'Status', value: 'Abierta sin usar' },
-        { label: 'Total Compute', value: '4 GPUs active' },
+        { label: 'Motor 1', value: 'Jenbacher J620 — 3.65 MW' },
+        { label: 'Motor 2', value: 'Jenbacher J620 — 3.65 MW' },
+        { label: 'Total Output', value: '7.3 MW eléctricos' },
+        { label: 'Eficiencia Eléctrica', value: '45.9%' },
+        { label: 'Eficiencia Total', value: '92% (trigeneración)' },
+        { label: 'Combustible', value: 'Gas natural — 25 km pipeline privado' },
+        { label: 'Instalación', value: '2014–2016 (operativos desde 2016)' },
+        { label: 'Subestación', value: '20 MVA propia' },
+        { label: 'Expansión', value: '100 MW autorizados' },
       ],
     },
     {
-      id: 'energy',
-      title: 'Energy',
-      icon: Zap,
-      headline: '7.3 MW Trigeneración',
-      subheadline: '$0.038–0.045/kWh interno',
+      id: 'silicon',
+      title: 'Silicon',
+      icon: Cpu,
+      headline: '2× H200 SXM5 141 GB',
+      subheadline: 'Live · 141 GB HBM3e cada uno · 4.8 TB/s',
       details: [
-        { label: 'Installed Power', value: '7.3 MW on-site generation' },
-        { label: 'Cost', value: '$0.038–0.045 USD/kWh' },
-        { label: 'Type', value: 'Cogeneration + Cooling' },
-        { label: 'Expansion', value: '100 MW long-term potential' },
-        { label: 'Pipeline', value: '25 km private gas pipeline' },
+        { label: 'GPU 1', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
+        { label: 'GPU 2', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
+        { label: 'Memory Bandwidth', value: '4.8 TB/s por GPU' },
+        { label: 'Total VRAM', value: '282 GB HBM3e' },
+        { label: 'Status', value: 'Live — Abierta sin usar' },
+        { label: 'Capacidad IT Fase 1', value: '2 MW IT' },
+        { label: 'Interconexión', value: 'NVLink + NVSwitch ready' },
+        { label: 'Cooling', value: 'Direct-to-chip liquid cooling' },
       ],
     },
     {
       id: 'infra',
       title: 'Infra Física',
       icon: MapPin,
-      headline: '15,000 m² Compute + 45 ha',
-      subheadline: 'Campus autorizado a 100 MW',
+      headline: '15,000 m² · 45 ha Campus',
+      subheadline: 'Celaya, Guanajuato · 100 MW potencial',
       details: [
-        { label: 'Compute Floor', value: '15,000 m² Phase 1' },
-        { label: 'Campus Total', value: '45 hectares' },
-        { label: 'Substation', value: '20 MVA' },
-        { label: 'Water', value: '3 wells + PTAR 1,500 m³/day' },
-        { label: 'Location', value: 'Celaya, Parque Industrial Cuadritos' },
+        { label: 'Ubicación', value: 'Celaya, Guanajuato, México' },
+        { label: 'Coordenadas', value: '20.3664° N, 100.8169° W' },
+        { label: 'Data Hall', value: '15,000 m² (1.5 ha dedicados)' },
+        { label: 'Campus Total', value: '45 hectáreas' },
+        { label: 'Gasoducto', value: '25 km privado (propiedad del grupo)' },
+        { label: 'Agua', value: '3 pozos industriales' },
+        { label: 'PTAR', value: '1,500 m³/día tratamiento' },
+        { label: 'Autorización', value: '100 MW long-term' },
       ],
     },
     {
       id: 'jurisdiction',
       title: 'Jurisdicción',
       icon: Shield,
-      headline: 'MX Law + MLAT-Only',
-      subheadline: 'Sin CLOUD Act exposure',
+      headline: 'MX Law · MLAT-Only',
+      subheadline: 'SAPI de CV · Zero CLOUD Act exposure',
       details: [
-        { label: 'Legal Framework', value: 'Mexican Law (LFPDPPP)' },
-        { label: 'Data Access', value: 'MLAT treaty only' },
+        { label: 'Estructura Legal', value: 'SAPI de CV' },
+        { label: 'Holding', value: 'EnergyCore Owner (Holding Familiar)' },
+        { label: 'Operación', value: 'OpCo (colocation)' },
+        { label: 'Marco Legal', value: 'Ley Federal de Protección de Datos (LFPDPPP)' },
+        { label: 'Acceso Datos', value: 'MLAT treaty only' },
         { label: 'US Exposure', value: 'Zero CLOUD Act' },
         { label: 'Compliance', value: 'SOC 2 Type II, ISO 27001' },
-        { label: 'Sovereignty', value: 'Jurisdicción local exclusiva' },
+        { label: 'Control', value: 'Patrimonial blindado' },
       ],
     },
     {
       id: 'orchestration',
       title: 'Orchestration',
       icon: Network,
-      headline: 'TommyAI v11.0 + Heptágono',
-      subheadline: 'Archivo Vivo + Field Access',
+      headline: 'TommyAI v11.0 · Heptágono',
+      subheadline: 'Archivo Vivo · Field Access · Kubernetes-native',
       details: [
         { label: 'AI Engine', value: 'TommyAI v11.0' },
         { label: 'Framework', value: 'Heptágono' },
-        { label: 'Documentation', value: 'Archivo Vivo' },
+        { label: 'Documentation', value: 'Archivo Vivo (live docs)' },
         { label: 'Access', value: 'Field Access (gated)' },
-        { label: 'Stack', value: 'Kubernetes-native, policy-driven' },
+        { label: 'Orchestration', value: 'Kubernetes-native' },
+        { label: 'Policy', value: 'Policy-as-code' },
+        { label: 'Observability', value: 'Prometheus + Grafana' },
+        { label: 'CI/CD', value: 'GitOps (ArgoCD)' },
       ],
     },
   ];
@@ -195,7 +229,20 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
     { destination: 'Querétaro', latency: '5–12 ms', status: 'live' },
     { destination: 'CDMX', latency: '18–28 ms', status: 'live' },
     { destination: 'Dallas', latency: '42–55 ms', status: 'live' },
-    { destination: 'Miami', latency: '65–80 ms', status: 'planned' },
+    { destination: 'Miami', latency: '<2 ms (objetivo)', status: 'planned' },
+  ];
+
+  const proofStripData = [
+    { label: 'Ubicación', value: 'Celaya, GTO' },
+    { label: 'Campus', value: '15,000 m²' },
+    { label: 'Potencia', value: '7.3 MW' },
+    { label: 'GPUs', value: '2× H200' },
+    { label: 'Capacidad IT', value: '2 MW' },
+    { label: 'Pipeline', value: '25 km' },
+    { label: 'Subestación', value: '20 MVA' },
+    { label: 'Agua', value: '3 pozos' },
+    { label: 'Latencia QRO', value: '5–12 ms' },
+    { label: 'Estructura', value: 'SAPI de CV' },
   ];
 
   return (
@@ -206,17 +253,37 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
     >
       <div className="px-6 lg:px-[7vw]">
         {/* Headline */}
-        <div ref={headlineRef} className="mb-16">
+        <div ref={headlineRef} className="mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-ignum-gray mb-4 block">
-            20.3664° N, 100.8169° W
+            20.3664° N, 100.8169° W · Celaya, Guanajuato
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ignum-offwhite leading-[0.95] tracking-tight mb-6">
             The Field.
           </h2>
           <p className="font-body text-lg md:text-xl text-ignum-gray max-w-2xl leading-relaxed">
-            Infraestructura física verificable. No promesas. No vaporware. 
-            Solo silicio, energía y jurisdicción que puedes auditar.
+            Infraestructura física verificable. 2× Jenbacher J620. 2× H200 SXM5 141 GB. 
+            7.3 MW operativos. No promesas. Solo silicio, energía y jurisdicción.
           </p>
+        </div>
+
+        {/* Proof Strip — Los 10 Datos Mínimos */}
+        <div
+          ref={proofStripRef}
+          className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-2 mb-16"
+        >
+          {proofStripData.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-ignum-charcoal/60 border border-ignum-offwhite/10 p-3 text-center"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-wider text-ignum-gray block mb-1">
+                {item.label}
+              </span>
+              <span className="font-display text-sm font-bold text-ignum-offwhite">
+                {item.value}
+              </span>
+            </div>
+          ))}
         </div>
 
         {/* Interactive Pillars */}
@@ -266,16 +333,16 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
               </p>
 
               {expandedPillar === pillar.id && (
-                <div className="mt-6 pt-6 border-t border-ignum-offwhite/10 space-y-3">
+                <div className="mt-6 pt-6 border-t border-ignum-offwhite/10 space-y-2">
                   {pillar.details.map((detail, idx) => (
                     <div
                       key={idx}
-                      className="flex justify-between items-center"
+                      className="flex justify-between items-center py-1"
                     >
-                      <span className="font-mono text-xs text-ignum-gray uppercase tracking-wider">
+                      <span className="font-mono text-[10px] text-ignum-gray uppercase tracking-wider">
                         {detail.label}
                       </span>
-                      <span className="font-mono text-sm text-ignum-offwhite">
+                      <span className="font-mono text-xs text-ignum-offwhite text-right">
                         {detail.value}
                       </span>
                     </div>
@@ -295,7 +362,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
             </h3>
             <span className="font-mono text-xs text-ignum-gray uppercase tracking-wider flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-ignum-success animate-pulse" />
-              Real-time
+              Real-time · 2× Jenbacher J620
             </span>
           </div>
 
@@ -313,6 +380,9 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 </span>
                 <span className="font-mono text-sm text-ignum-gray">MW</span>
               </div>
+              <span className="font-mono text-[10px] text-ignum-gray/60 block mt-1">
+                2× J620 @ 3.65 MW
+              </span>
             </div>
 
             <div className="card-dark p-6">
@@ -328,6 +398,9 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 </span>
                 <span className="font-mono text-sm text-ignum-gray">%</span>
               </div>
+              <span className="font-mono text-[10px] text-ignum-gray/60 block mt-1">
+                2× H200 SXM5
+              </span>
             </div>
 
             <div className="card-dark p-6">
@@ -343,6 +416,9 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 </span>
                 <span className="font-mono text-sm text-ignum-gray">°C</span>
               </div>
+              <span className="font-mono text-[10px] text-ignum-gray/60 block mt-1">
+                Direct-to-chip
+              </span>
             </div>
 
             <div className="card-dark p-6">
@@ -358,6 +434,9 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 </span>
                 <span className="font-mono text-sm text-ignum-gray">eff</span>
               </div>
+              <span className="font-mono text-[10px] text-ignum-gray/60 block mt-1">
+                Trigeneración
+              </span>
             </div>
           </div>
 
@@ -365,7 +444,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
           <div className="card-dark p-6">
             <h4 className="font-display text-sm font-bold text-ignum-offwhite uppercase tracking-wider mb-4 flex items-center gap-2">
               <Clock size={16} className="text-ignum-copper" />
-              Latencias Medidas
+              Latencias Medidas · Feb 2026
             </h4>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {latencyData.map((item, idx) => (
@@ -391,10 +470,13 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                 </div>
               ))}
             </div>
+            <p className="font-mono text-[10px] text-ignum-gray mt-4 pt-4 border-t border-ignum-offwhite/10">
+              Objetivo con IRU dark fiber + DWDM: {'<'}2 ms efectiva a Querétaro
+            </p>
           </div>
         </div>
 
-        {/* Hardware Specs */}
+        {/* Hardware Specs + Institutional */}
         <div ref={specsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* H200 Image */}
           <div className="relative">
@@ -412,7 +494,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                     NVIDIA H200 SXM5
                   </span>
                   <span className="font-display text-lg font-bold text-ignum-offwhite">
-                    141 GB HBM3e
+                    141 GB HBM3e × 2
                   </span>
                 </div>
                 <div className="text-right">
@@ -421,77 +503,44 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                   </span>
                   <span className="font-mono text-sm text-ignum-success flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-ignum-success animate-pulse" />
-                    Abierta sin usar
+                    Live — Abierta
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Pricing & Structure */}
+          {/* Institutional Structure */}
           <div className="space-y-6">
-            <div className="card-dark p-6">
-              <h4 className="font-display text-sm font-bold text-ignum-offwhite uppercase tracking-wider mb-4 flex items-center gap-2">
-                <DollarSign size={16} className="text-ignum-copper" />
-                Pricing Transparente
-              </h4>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-ignum-black/50">
-                  <span className="font-mono text-sm text-ignum-gray">
-                    Energía (trigeneración)
-                  </span>
-                  <span className="font-mono text-lg text-ignum-copper font-bold">
-                    $0.038–0.045/kWh
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-ignum-black/50">
-                  <span className="font-mono text-sm text-ignum-gray">
-                    Colocation HPC/AI
-                  </span>
-                  <span className="font-mono text-lg text-ignum-copper font-bold">
-                    $/kW-mes + SLA
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-ignum-black/50">
-                  <span className="font-mono text-sm text-ignum-gray">
-                    Cooling-as-a-Service
-                  </span>
-                  <span className="font-mono text-lg text-ignum-copper font-bold">
-                    Incluido
-                  </span>
-                </div>
-              </div>
-            </div>
-
             <div className="card-dark p-6">
               <h4 className="font-display text-sm font-bold text-ignum-offwhite uppercase tracking-wider mb-4 flex items-center gap-2">
                 <Lock size={16} className="text-ignum-copper" />
                 Estructura Institucional
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-ignum-copper/40" />
+                  <div className="w-4 h-4 bg-ignum-copper/40" />
                   <span className="font-mono text-sm text-ignum-offwhite">
-                    Holding Familiar
+                    SAPI de CV (OpCo)
                   </span>
                 </div>
-                <div className="flex items-center gap-3 ml-4">
-                  <div className="w-2 h-px bg-ignum-gray" />
-                  <div className="w-3 h-3 bg-ignum-copper/60" />
+                <div className="flex items-center gap-3 ml-6">
+                  <div className="w-4 h-px bg-ignum-gray" />
+                  <div className="w-4 h-4 bg-ignum-copper/60" />
                   <span className="font-mono text-sm text-ignum-offwhite">
-                    EnergyCore Owner
+                    EnergyCore Owner (Holding Familiar)
                   </span>
                 </div>
-                <div className="flex items-center gap-3 ml-8">
-                  <div className="w-2 h-px bg-ignum-gray" />
-                  <div className="w-3 h-3 bg-ignum-copper" />
+                <div className="flex items-center gap-3 ml-12">
+                  <div className="w-4 h-px bg-ignum-gray" />
+                  <div className="w-4 h-4 bg-ignum-copper" />
                   <span className="font-mono text-sm text-ignum-offwhite">
-                    SPV Operativo
+                    Control Patrimonial Blindado
                   </span>
                 </div>
               </div>
               <p className="font-mono text-xs text-ignum-gray mt-4 pt-4 border-t border-ignum-offwhite/10">
-                El capital compra exposición al flujo y expansión, no al parque.
+                El capital compra exposición al flujo y expansión, no al parque físico.
               </p>
             </div>
 
@@ -518,6 +567,21 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Investor Gate */}
+            <div className="card-dark p-6 border-ignum-copper/30">
+              <h4 className="font-display text-sm font-bold text-ignum-offwhite uppercase tracking-wider mb-3 flex items-center gap-2">
+                <DollarSign size={16} className="text-ignum-copper" />
+                Investor Gate
+              </h4>
+              <p className="font-mono text-xs text-ignum-gray mb-4">
+                PPA pricing, cap table, DSCR, IRR, EBITDA — disponible solo después de verificación.
+              </p>
+              <button className="btn-copper w-full flex items-center justify-center gap-2 group">
+                Request Private Access
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
             </div>
           </div>
         </div>
