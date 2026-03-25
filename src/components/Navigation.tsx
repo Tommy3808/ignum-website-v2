@@ -27,6 +27,7 @@ const Navigation = () => {
     { label: 'Solutions', id: 'commercial', href: '/solutions' },
     { label: 'About', id: 'about', href: '/about' },
     { label: 'Access', id: 'field-access', href: '/access' },
+    { label: 'Contact', id: 'contact', href: '/contact' },
   ];
 
   return (
