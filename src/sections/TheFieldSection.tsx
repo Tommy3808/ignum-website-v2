@@ -202,7 +202,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
         { label: 'Marco Legal', value: 'Ley Federal de Protección de Datos (LFPDPPP)' },
         { label: 'Acceso Datos', value: 'MLAT treaty only' },
         { label: 'US Exposure', value: 'Zero CLOUD Act' },
-        { label: 'Compliance', value: 'SOC 2 Type II, ISO 27001' },
+        { label: 'Compliance', value: 'MX entity · MLAT framework' },
         { label: 'Control', value: 'Patrimonial blindado' },
       ],
     },

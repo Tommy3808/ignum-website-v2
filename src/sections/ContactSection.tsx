@@ -127,7 +127,7 @@ const ContactSection = ({ className = '' }: ContactSectionProps) => {
             <div className="flex items-center gap-3 p-4 bg-ignum-black/50 border border-ignum-offwhite/10">
               <div className="w-2 h-2 rounded-full bg-ignum-success animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-wider text-ignum-gray">
-                All systems operational
+                Infrastructure in deployment
               </span>
             </div>
           </div>

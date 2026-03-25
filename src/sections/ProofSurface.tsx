@@ -42,7 +42,7 @@ const cards = [
     ],
   },
   {
-    status: 'LIVE NOW',
+    status: 'MEASURED',
     title: 'Connectivity',
     lines: [
       'Querétaro: 5–12 ms',
@@ -66,6 +66,7 @@ const statusColor: Record<string, string> = {
   'IN DEPLOYMENT': 'text-ignum-copper',
   'PLANNED': 'text-ignum-gray',
   'LONG-TERM': 'text-ignum-gray/60',
+  'MEASURED': 'text-ignum-copper/70',
 };
 
 interface ProofSurfaceProps { className?: string; }
