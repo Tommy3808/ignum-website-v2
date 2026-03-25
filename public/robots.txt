@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ignumprotocol.ai/sitemap.xml
+
+# Block sensitive paths
+Disallow: /api/
+Disallow: /admin/
