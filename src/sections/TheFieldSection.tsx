@@ -160,7 +160,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
       title: 'Silicon',
       icon: Cpu,
       headline: '4× H200 SXM5 141 GB',
-      subheadline: 'Live · 141 GB HBM3e cada uno · 4.8 TB/s',
+      subheadline: 'Deploying · 141 GB HBM3e · NVLink 4.0 · 4.8 TB/s',
       details: [
         { label: 'GPU 1–2', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
         { label: 'GPU 3–4', value: 'NVIDIA H200 SXM5 — 141 GB HBM3e' },
@@ -494,7 +494,7 @@ const TheFieldSection = ({ className = '' }: TheFieldSectionProps) => {
                     NVIDIA H200 SXM5
                   </span>
                   <span className="font-display text-lg font-bold text-ignum-offwhite">
-                    141 GB HBM3e × 2
+                    141 GB HBM3e × 4
                   </span>
                 </div>
                 <div className="text-right">

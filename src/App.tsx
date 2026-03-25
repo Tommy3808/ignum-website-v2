@@ -5,8 +5,9 @@ import Navigation from './components/Navigation';
 import NoiseOverlay from './components/NoiseOverlay';
 import FactsBar from './components/FactsBar';
 import HeroSection from './sections/HeroSection';
-import ProofSurface from './sections/ProofSurface';
 import TheFieldSection from './sections/TheFieldSection';
+import ProofSection from './sections/ProofSection';
+import ProofSurface from './sections/ProofSurface';
 import ThesisSection from './sections/ThesisSection';
 import InfrastructureSection from './sections/InfrastructureSection';
 import SecuritySection from './sections/SecuritySection';
@@ -15,9 +16,12 @@ import CommercialModel from './sections/CommercialModel';
 import InstitutionalStructure from './sections/InstitutionalStructure';
 import ExecutionDiscipline from './sections/ExecutionDiscipline';
 import RoadmapSection from './sections/RoadmapSection';
+import JurisdictionSection from './sections/JurisdictionSection';
 import ComplianceSection from './sections/ComplianceSection';
 import EcosystemSection from './sections/EcosystemSection';
+import ArchivoSection from './sections/ArchivoSection';
 import TokenSection from './sections/TokenSection';
+import FieldAccessSection from './sections/FieldAccessSection';
 import PrivateAccess from './sections/PrivateAccess';
 import ContactSection from './sections/ContactSection';
 
@@ -44,33 +48,44 @@ function App() {
       <main className="relative">
         {/* 1. Hero */}
         <HeroSection className="z-10" />
-        {/* Facts ticker */}
         <FactsBar />
-        {/* 2. Proof Surface */}
+        {/* 2. The Sovereign Stack */}
+        <TheFieldSection className="z-15" />
+        {/* 3. Proof — Live Operations + Terminal Logs + TommyAI samples */}
+        <ProofSection className="z-16" />
+        {/* 4. Proof Surface — 6 data cards con badges */}
         <ProofSurface />
-        {/* 3. The Sovereign Stack */}
-        <TheFieldSection className="z-20" />
-        {/* 4. Infrastructure Basis */}
+        {/* 5. Infrastructure Basis */}
         <InfrastructureSection className="z-30" />
-        {/* 5. Connectivity */}
+        {/* 6. Thesis */}
+        <ThesisSection className="z-35" />
+        {/* 7. Connectivity */}
         <DeploySection className="z-40" />
-        {/* 6. Commercial Model */}
+        {/* 8. Security */}
+        <SecuritySection className="z-45" />
+        {/* 9. Jurisdiction */}
+        <JurisdictionSection />
+        {/* 10. Commercial Model */}
         <CommercialModel />
-        {/* 7. Institutional Structure */}
+        {/* 11. Institutional Structure */}
         <InstitutionalStructure />
-        {/* 8. Execution Discipline */}
+        {/* 12. Execution Discipline */}
         <ExecutionDiscipline />
-        {/* 9. Roadmap */}
+        {/* 13. Roadmap */}
         <RoadmapSection />
-        {/* Supporting sections */}
-        <ThesisSection className="z-50" />
-        <SecuritySection className="z-[60]" />
-        <ComplianceSection className="z-[70]" />
-        <EcosystemSection className="z-[80]" />
-        <TokenSection className="z-[85]" />
-        {/* 10. Private Access */}
+        {/* 14. Compliance */}
+        <ComplianceSection className="z-[60]" />
+        {/* 15. Ecosystem */}
+        <EcosystemSection className="z-[70]" />
+        {/* 16. Archivo */}
+        <ArchivoSection />
+        {/* 17. Token $IGNUM */}
+        <TokenSection className="z-[75]" />
+        {/* 18. Field Access */}
+        <FieldAccessSection />
+        {/* 19. Private Access */}
         <PrivateAccess />
-        {/* Contact */}
+        {/* 20. Contact */}
         <ContactSection className="z-[90]" />
       </main>
     </div>
