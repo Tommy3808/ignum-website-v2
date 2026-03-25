@@ -147,7 +147,7 @@ const ThesisSection = ({ className = '' }: ThesisSectionProps) => {
           className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ignum-offwhite leading-[0.95] tracking-tight mb-8"
           style={{ willChange: 'transform, opacity' }}
         >
-          The model is not
+          Why sovereign infrastructure now
           <br />
           <span className="text-gradient-copper">the moat.</span>
         </h2>

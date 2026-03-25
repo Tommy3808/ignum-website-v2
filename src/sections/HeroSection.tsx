@@ -114,13 +114,6 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
     }
   };
 
-  const scrollToThesis = () => {
-    const element = document.getElementById('thesis');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -161,9 +154,9 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           ref={headlineRef}
           className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(44px,5.2vw,84px)] font-bold text-ignum-offwhite leading-[0.95] tracking-tight max-w-[42vw] mb-6"
         >
-          Infrastructure
+          Sovereign Intelligence
           <br />
-          <span className="text-gradient-copper">is the moat.</span>
+          <span className="text-gradient-copper">Infrastructure.</span>
         </h1>
 
         {/* Subheadline */}
@@ -171,7 +164,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           ref={subheadlineRef}
           className="font-body text-lg md:text-xl text-ignum-gray max-w-md mb-10 leading-relaxed"
         >
-          Sovereign compute for the age of AI. Bare-metal performance with jurisdictional control.
+          Private AI training, inference, and deployment on controlled regional infrastructure for governments, enterprises, and strategic capital.
         </p>
 
         {/* CTAs */}
@@ -181,7 +174,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
-            onClick={scrollToThesis}
+            onClick={() => document.getElementById('infrastructure')?.scrollIntoView({behavior: 'smooth'})}
             className="font-mono text-sm text-ignum-gray hover:text-ignum-copper transition-colors underline underline-offset-4"
           >
             Read the thesis

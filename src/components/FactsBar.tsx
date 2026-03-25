@@ -1,14 +1,18 @@
 const facts = [
-  { label: 'Location', value: 'Cuadritos, Celaya · Parque Industrial' },
-  { label: 'Phase 1 Footprint', value: '15,000 m²' },
+  { label: 'Location', value: 'Cuadritos, Celaya · Parque Industrial · Guanajuato, Mexico' },
   { label: 'On-Site Generation', value: '7.3 MW operational today' },
-  { label: 'H200 SXM5 141GB', value: 'Deploying' },
+  { label: 'Phase 1 Footprint', value: '15,000 m² · 45 ha campus' },
+  { label: 'Compute', value: '4× H200 SXM5 141GB HBM3e — deploying' },
   { label: 'IT Capacity', value: '2 MW IT Phase 1' },
   { label: 'Gas Pipeline', value: '25 km private' },
   { label: 'Substation', value: '20 MVA' },
   { label: 'Water', value: '3 wells · PTAR 1,500 m³/day' },
-  { label: 'Latency QRO/CDMX/DFW', value: '5–12 ms / 18–28 ms / 42–55 ms' },
+  { label: 'Latency QRO', value: '5–12 ms' },
+  { label: 'Latency CDMX', value: '18–28 ms' },
+  { label: 'Latency Dallas', value: '42–55 ms' },
   { label: 'Structure', value: 'Holding → EnergyCore → SPV → HoldCo' },
+  { label: 'Deployment', value: 'Private training · inference · custom models' },
+  { label: 'Jurisdiction', value: 'Mexican entity · MLAT framework' },
 ];
 
 const FactsBar = () => (
