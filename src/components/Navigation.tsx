@@ -23,11 +23,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { label: 'Infrastructure', id: 'infrastructure' },
-    { label: 'Compute', id: 'thefield' },
-    { label: 'Jurisdiction', id: 'jurisdiction' },
-    { label: 'Roadmap', id: 'roadmap' },
-    { label: 'Access', id: 'field-access' },
+    { label: 'Infrastructure', id: 'infrastructure', href: '/infrastructure' },
+    { label: 'Solutions', id: 'commercial', href: '/solutions' },
+    { label: 'About', id: 'about', href: '/about' },
+    { label: 'Access', id: 'field-access', href: '/access' },
   ];
 
   return (
