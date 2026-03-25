@@ -87,9 +87,9 @@ const ContactSection = ({ className = '' }: ContactSectionProps) => {
   };
 
   const footerLinks = [
-    { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
-    { label: 'Status', href: '#' },
+    { label: 'Privacy', href: 'mailto:tommy@ignumprotocol.com' },
+    { label: 'Terms', href: 'mailto:tommy@ignumprotocol.com' },
+    { label: 'Contact', href: 'mailto:tommy@ignumprotocol.com' },
     { label: 'Support', href: '#' },
   ];
 

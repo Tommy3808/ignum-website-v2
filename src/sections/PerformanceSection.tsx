@@ -93,7 +93,7 @@ const PerformanceSection = ({ className = '' }: PerformanceSectionProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    alert('Thank you for your interest. We will be in touch soon.');
+    window.location.href = 'mailto:tommy@ignumprotocol.com?subject=IGNUM%20Compute%20Request&body=Email%3A%20' + encodeURIComponent(email);
     setEmail('');
   };
 
