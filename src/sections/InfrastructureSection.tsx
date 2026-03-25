@@ -14,7 +14,7 @@ const pillars = [
     icon: Zap,
     label: 'Energía On-Site',
     value: '7.3 MW',
-    sub: 'Cogeneración operativa hoy · $0.038–0.045/kWh',
+    sub: '7.3 MW · 2× Jenbacher J620 · Trigeneración',
   },
   {
     icon: Database,
